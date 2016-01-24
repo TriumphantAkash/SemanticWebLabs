@@ -7,6 +7,7 @@ import org.apache.log4j.varia.NullAppender;
 
 /** Tutorial 3 Statement attribute accessor methods
  */
+
 public class Tutorial04 extends Object {
     public static void main (String args[]) {
     
@@ -21,15 +22,16 @@ public class Tutorial04 extends Object {
 
         // create the resource
         //   and add the properties cascading style
-        Resource johnSmith 
+        Resource johnSmith
           = model.createResource(personURI)
                  .addProperty(VCARD.FN, fullName)
-                 .addProperty(VCARD.N, 
+                 .addProperty(VCARD.N,
                               model.createResource()
                                    .addProperty(VCARD.Given, givenName)
                                    .addProperty(VCARD.Family, familyName));
         
      // now write the model in XML form to a file
         model.write(System.out);
+       // model.write(System.out, "N-TRIPLES");
     }
 }

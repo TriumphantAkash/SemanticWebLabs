@@ -18,9 +18,9 @@ public class Tutorial01 extends Object {
         Model model = ModelFactory.createDefaultModel();
 
        // create the resource
-       Resource johnSmith = model.createResource(personURI);
+       Resource johnSmith = model.createResource(personURI).addProperty(VCARD.FN, fullName);
 
       // add the property
-      johnSmith.addProperty(VCARD.FN, fullName);
+      //johnSmith.addProperty(VCARD.FN, fullName);
       }
 }
