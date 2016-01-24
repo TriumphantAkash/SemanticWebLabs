@@ -1,0 +1,40 @@
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:admin="http://webns.net/mvcb/">
+<foaf:PersonalProfileDocument rdf:about="">
+  <foaf:maker rdf:resource="#me"/>
+  <foaf:primaryTopic rdf:resource="#me"/>
+  <admin:generatorAgent rdf:resource="http://www.ldodds.com/foaf/foaf-a-matic"/>
+  <admin:errorReportsTo rdf:resource="mailto:leigh@ldodds.com"/>
+</foaf:PersonalProfileDocument>
+<foaf:Person rdf:ID="me">
+<foaf:name>Akash Chaturvedi</foaf:name>
+<foaf:title>Mr</foaf:title>
+<foaf:givenname>Akash</foaf:givenname>
+<foaf:family_name>Chaturvedi</foaf:family_name>
+<foaf:nick>Skier</foaf:nick>
+<foaf:mbox rdf:resource="mailto:axc144430@utdallas.edu"/>
+<foaf:homepage rdf:resource="http://triumphantAkash.github.io"/>
+<foaf:depiction rdf:resource="sample.jpg"/>
+<foaf:phone rdf:resource="tel:(469)-774-6884"/>
+<foaf:workplaceHomepage rdf:resource="http://kodiaknetworks.com"/>
+<foaf:workInfoHomepage rdf:resource="nothing"/>
+<foaf:schoolHomepage rdf:resource="http://www.utdallas.edu"/>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>Nilesh</foaf:name>
+<foaf:mbox rdf:resource="mailto:neel@gmail.com"/>
+<rdfs:seeAlso rdf:resource="nothing"/></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>Mayank</foaf:name>
+<foaf:mbox rdf:resource="mailto:mayank@utdallas.edu"/>
+<rdfs:seeAlso rdf:resource="haha"/></foaf:Person></foaf:knows>
+<foaf:knows>
+<foaf:Person>
+<foaf:name>Ashesh</foaf:name>
+<foaf:mbox rdf:resource="mailto:ashesh@yahoo.com"/>
+<rdfs:seeAlso rdf:resource="hehe"/></foaf:Person></foaf:knows></foaf:Person>
+</rdf:RDF>
