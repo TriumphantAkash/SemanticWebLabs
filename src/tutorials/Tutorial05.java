@@ -17,13 +17,19 @@ public class Tutorial05 extends Object {
         subsequent examples.
     */    
     static final String inputFileName  = "kevin.rdf";
+    static final String outputXML = "Lab1_2_axc144430.xml";
+    static final String outputNTRIPLE = "Lab1_2_axc144430.ntp";
+    static final String outputN3 = "Lab1_2_axc144430.n3";
                               
-    public static void main (String args[]) {
+    public static void main (String args[]) throws FileNotFoundException {
     	org.apache.log4j.BasicConfigurator.configure(new NullAppender());
         // create an empty model
         Model model = ModelFactory.createDefaultModel();
 
         InputStream in = FileManager.get().open( inputFileName );
+        OutputStream outXML = new FileOutputStream(outputXML);
+        OutputStream outNTRIPLE = new FileOutputStream(outputNTRIPLE);
+        OutputStream outN3 = new FileOutputStream(outputN3);
         if (in == null) {
             throw new IllegalArgumentException( "File: " + inputFileName + " not found");
         }
@@ -32,6 +38,8 @@ public class Tutorial05 extends Object {
         model.read(in, null);
                     
         // write it to standard out
-        model.write(System.out);            
+        model.write(outXML, "RDF/XML-ABBREV");            
+        model.write(outNTRIPLE, "N-TRIPLES");
+        model.write(outN3, "N3");
     }
 }
