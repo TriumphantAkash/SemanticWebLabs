@@ -36,47 +36,56 @@ public class lab1_4d extends Object {
         
         
         Dataset dataset=TDBFactory.createDataset("MyDatabases/Dataset1");
-
-    	dataset.begin(ReadWrite.WRITE);
     	
-    	
-    	
+        dataset.begin(ReadWrite.READ);
+        
     	try
      	{
-    		model=dataset.getNamedModel("myrdf");         
-            model.createResource(personURI)
-            .addProperty(VCARD.FN, fullName)
-            .addProperty(VCARD.BDAY,birthDate)
-            .addProperty(VCARD.EMAIL, email)
-            .addProperty(VCARD.TITLE, title);          
-        
-           InputStream in = FileManager.get().open( inputFileName );
-          if (in == null) {
-              throw new IllegalArgumentException( "File: " + inputFileName + " not found");
-          }
-          
-          model.read(in, defaultNameSpace);            
-          
-          
-          try {
+    		//initialize model with the default graph model
+    		model=dataset.getDefaultModel();
+    		//now name the dataset graph to "myrdf"
+    		dataset.addNamedModel("myrdf", model);
+     	} finally {dataset.end();}
+    		
+    	
+    	dataset.begin(ReadWrite.WRITE);
+    	
+    	try {
+    		//get the previously named "myrdf" graph and update the corresponding model
+	    	model=dataset.getNamedModel("myrdf");
+	            model.createResource(personURI)
+	            .addProperty(VCARD.FN, fullName)
+	            .addProperty(VCARD.BDAY,birthDate)
+	            .addProperty(VCARD.EMAIL, email)
+	            .addProperty(VCARD.TITLE, title);          
+	        
+	        InputStream in = FileManager.get().open( inputFileName );
+	        if (in == null) {
+	        	throw new IllegalArgumentException( "File: " + inputFileName + " not found");
+	        }
+	          
+	        model.read(in, defaultNameSpace);            
+	          
+	          
+	          
+	          
   			FileOutputStream xmlAnswer = new FileOutputStream("Lab1_4_aChaturvedi.xml");
   			FileOutputStream ntpAnswer = new FileOutputStream("Lab1_4_aChaturvedi.ntp");
   			FileOutputStream n3pAnswer = new FileOutputStream("Lab1_4_aChaturvedi.n3");
   			model.write(xmlAnswer,"RDF/XML-ABBREV");
   			model.write(ntpAnswer,"N-TRIPLES" );
   			model.write(n3pAnswer, "N3");
+  			
+  			dataset.commit();
+  			dataset.end();
+  			
   		} catch (FileNotFoundException e) {
-  			  			e.printStackTrace();
+  			e.printStackTrace();
+  		} finally {
+  			dataset.close();
   		}
-    	  	
  		
     		
-    		dataset.commit();
-    	}
-    	finally
-    	{
-    		dataset.end();
-    	}
 
     }
 }
