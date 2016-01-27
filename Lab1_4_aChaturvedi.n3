@@ -1,0 +1,51 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix admin: <http://webns.net/mvcb/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<http://utdallas/semclass#KevenAtes>
+        <http://www.w3.org/2001/vcard-rdf/3.0#BDAY>
+                "19010101" ;
+        <http://www.w3.org/2001/vcard-rdf/3.0#EMAIL>
+                "atescomp@utdallas.edu" ;
+        <http://www.w3.org/2001/vcard-rdf/3.0#FN>
+                "Dr. Keven L. Ates" ;
+        <http://www.w3.org/2001/vcard-rdf/3.0#TITLE>
+                "Senior Lecturer" .
+
+<http://org.semwebprogramming/chapter2/people>
+        a                     foaf:PersonalProfileDocument ;
+        admin:errorReportsTo  <mailto:leigh@ldodds.com> ;
+        admin:generatorAgent  <http://www.ldodds.com/foaf/foaf-a-matic> ;
+        foaf:maker            <http://org.semwebprogramming/chapter2/people#me> ;
+        foaf:primaryTopic     <http://org.semwebprogramming/chapter2/people#me> .
+
+<http://org.semwebprogramming/chapter2/people#me>
+        a                       foaf:Person ;
+        foaf:depiction          <http://org.semwebprogramming/chapter2/sample.jpg> ;
+        foaf:family_name        "Chaturvedi" ;
+        foaf:givenname          "Akash" ;
+        foaf:homepage           <http://triumphantAkash.github.io> ;
+        foaf:knows              [ a             foaf:Person ;
+                                  rdfs:seeAlso  <http://org.semwebprogramming/chapter2/nothing> ;
+                                  foaf:mbox     <mailto:neel@gmail.com> ;
+                                  foaf:name     "Nilesh"
+                                ] ;
+        foaf:knows              [ a             foaf:Person ;
+                                  rdfs:seeAlso  <http://org.semwebprogramming/chapter2/haha> ;
+                                  foaf:mbox     <mailto:mayank@utdallas.edu> ;
+                                  foaf:name     "Mayank"
+                                ] ;
+        foaf:knows              [ a             foaf:Person ;
+                                  rdfs:seeAlso  <http://org.semwebprogramming/chapter2/hehe> ;
+                                  foaf:mbox     <mailto:ashesh@yahoo.com> ;
+                                  foaf:name     "Ashesh"
+                                ] ;
+        foaf:mbox               <mailto:axc144430@utdallas.edu> ;
+        foaf:name               "Akash Chaturvedi" ;
+        foaf:nick               "Skier" ;
+        foaf:phone              <tel:(469)-774-6884> ;
+        foaf:schoolHomepage     <http://www.utdallas.edu> ;
+        foaf:title              "Mr" ;
+        foaf:workInfoHomepage   <http://org.semwebprogramming/chapter2/nothing> ;
+        foaf:workplaceHomepage  <http://kodiaknetworks.com> .

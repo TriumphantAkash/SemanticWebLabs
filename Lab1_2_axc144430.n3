@@ -1,8 +1,0 @@
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix vcard: <http://www.w3.org/2001/vcard-rdf/3.0#> .
-
-<http://utdallas/semclass#KevenAtes>
-        vcard:BDAY   "1901-01-01" ;
-        vcard:EMAIL  "atescomp@utdallas.edu" ;
-        vcard:FN     "Keven L Ates" ;
-        vcard:TITLE  "Senior Lecturer" .

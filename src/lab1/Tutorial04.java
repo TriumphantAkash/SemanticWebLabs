@@ -1,4 +1,4 @@
-package tutorials;
+package lab1;
 
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.vocabulary.*;
